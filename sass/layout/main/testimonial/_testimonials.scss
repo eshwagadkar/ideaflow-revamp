@@ -1,5 +1,10 @@
 .testimonials {
     
+    @include respond(screen900){
+        display: grid;
+        place-items: center;
+    }
+
     &__list-container{
         
     }
@@ -14,17 +19,6 @@
             grid-template-columns: repeat(3, minmax(min-content, max-content));
         }
 
-        @include respond(screen900){
-            padding: 0 3rem;
-        }
-
-        @include respond(screen1024){
-            padding: 0 5rem;
-        }
-
-        @include respond(screen1280){
-            padding: 0 10rem;
-        }
 
         &__item{
             list-style: none;
@@ -59,11 +53,7 @@
             }
     
             @include respond(screen1280){
-                padding: 3rem;
-            }
-
-            @include respond(screen1366){
-                padding: 3.5rem;
+                padding: 2.8rem;
             }
 
         }
