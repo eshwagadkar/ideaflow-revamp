@@ -1433,6 +1433,12 @@ body {
   }
 }
 
+@media only screen and (min-width: 56.25em) {
+  .testimonials {
+    display: grid;
+    place-items: center;
+  }
+}
 .testimonials-list {
   display: grid;
   grid-template-rows: repeat(3, minmax(min-content, max-content));
@@ -1441,21 +1447,6 @@ body {
   .testimonials-list {
     grid-template-rows: repeat(1, minmax(min-content, max-content));
     grid-template-columns: repeat(3, minmax(min-content, max-content));
-  }
-}
-@media only screen and (min-width: 56.25em) {
-  .testimonials-list {
-    padding: 0 3rem;
-  }
-}
-@media only screen and (min-width: 64em) {
-  .testimonials-list {
-    padding: 0 5rem;
-  }
-}
-@media only screen and (min-width: 80em) {
-  .testimonials-list {
-    padding: 0 10rem;
   }
 }
 .testimonials-list__item {
@@ -1497,12 +1488,7 @@ body {
 }
 @media only screen and (min-width: 80em) {
   .testimonials-list__item {
-    padding: 3rem;
-  }
-}
-@media only screen and (min-width: 85em) {
-  .testimonials-list__item {
-    padding: 3.5rem;
+    padding: 2.8rem;
   }
 }
 
