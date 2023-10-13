@@ -1,0 +1,248 @@
+.hero-banner{
+    
+    display: grid;
+    grid-template-rows: repeat(2, minmax(min-content, max-content));
+    place-items: center; 
+    gap: 1.3rem;
+
+    position: relative;
+
+    @include respond(screen800){
+        grid-template-rows: repeat(3, minmax(min-content, max-content));
+        grid-template-columns: repeat(2, minmax(min-content, max-content));
+        column-gap: 6rem;
+        margin: 2rem 0 0 8rem;
+    }
+
+    @include respond(screen850){
+        column-gap: 10rem;
+    }
+
+    @include respond(screen900){
+        margin-left: 12rem;
+    }
+
+    @include respond(screen980){
+        grid-gap: 2rem 15rem;
+    }
+
+    @include respond(screen1080){
+        column-gap: 10rem;
+    }
+
+
+    &__image-container{
+
+        grid-row: 1 / 2; 
+        padding: 0 0 2rem;
+
+        animation: moveInBottom 1000ms 1s ease-out;
+        animation-fill-mode: backwards;
+
+        @include respond(screen320){
+            padding: 1.5rem 0;
+        }
+
+        @include respond(screen640){
+            padding: 3rem 0;
+        }
+
+        @include respond(screen800){
+            padding: 0 4.5rem 4.5rem 0;
+
+            grid-row: 1 / 4;
+            grid-column: 2 / 3; 
+
+        }
+
+        @include respond(screen850){
+            padding: 0 7rem 4.5rem 0;
+        }
+
+        @include respond(screen980){
+            padding: 0 10rem 4.5rem 0;
+        }
+
+
+    }
+
+    &__content-container{
+        grid-row: 2 / 3; 
+
+        backface-visibility: hidden;
+
+    }
+
+    &__main-heading{
+        font-size: 2.4rem;
+        padding: .4rem 2rem 0;
+
+        animation-name: moveInLeft;
+        animation-duration: 2000ms;
+        /* animation-delay: 1s; */
+        animation-timing-function: ease-out;
+        animation-fill-mode: backwards;
+
+
+        @include respond(screen320){
+            font-size: 2.8rem;
+            padding: .8rem 4rem 0;
+        }
+
+        @include respond(screen360){
+            font-size: 3.8rem;
+            padding: .8rem 6rem 0;
+        }
+
+        @include respond(screen480){
+            font-size: 4.2rem;
+            padding: .8rem 8rem 0;
+        }
+
+        @include respond(screen800){
+            font-size: 4.2rem;
+            padding: .8rem 0rem 1rem;
+        }
+
+        @include respond(screen1080){
+            font-size: 4.4rem;
+        }
+        
+        @include respond(screen1280){
+            font-size: 4.8rem;
+        }
+        
+    }
+
+    &__text-content{
+        text-align: left;
+        padding: 1rem 2rem 1.8rem;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+
+        animation-name: moveInRight;
+        animation-duration: 2000ms;
+        /* animation-delay: 1s; */ 
+        animation-timing-function: ease-out;
+        animation-fill-mode: backwards;
+
+
+        @include respond(screen320){
+            font-size: 1.8rem;
+            padding: 1rem 4rem 2rem;
+            margin: 1.5rem 0;
+        }
+
+        @include respond(screen360){
+            padding: 1rem 6rem 2rem;
+            font-size: 2.2rem;
+            margin: 2rem 0;
+        }
+
+        @include respond(screen480){
+            padding: 1rem 8rem 2rem;
+            font-size: 2.3rem;
+        }
+
+        @include respond(screen800){
+            padding: 1rem 0 2rem;
+            margin: 2rem 0 4rem;
+        }
+
+        @include respond(screen1080){
+            font-size: 2.4rem;
+            padding: 1rem 0 2rem;
+        }
+
+        @include respond(screen1280){
+            font-size: 2.6rem;
+        }
+        
+    }
+
+    &__cta{
+        padding: 1rem 2.8rem;
+        font-size: 1.3rem;
+        width: 100%;
+        margin-left : 2rem;
+        text-align: center;
+
+        &::after{
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all .4s;
+        }
+
+        &--animated{
+            animation: moveInBottom 1000ms 2s ease-out;
+            animation-fill-mode: backwards;
+        }
+
+        &:hover{
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba($color-black,.2);
+    
+            &::after{
+                /* transform: scale(2); */
+                transform: scaleX(1.4) scaleY(1.6);
+                opacity: 0; 
+            }
+        }
+
+
+        @include respond(screen320){
+            width: 100%;
+            font-size: 1.5rem;
+            padding: 1.2rem 3rem;
+            margin-left : 4rem;
+        }
+
+        @include respond(screen360){
+            width: 74%;
+            font-size: 1.8rem;
+            padding: 1.4rem 3.2rem;
+            margin-left : 6rem;
+        }
+
+        @include respond(screen480){
+            width: 68%;
+            font-size: 2rem;
+            padding: 1.6rem 3.4rem;
+            margin-left: 8rem;
+        }
+
+        @include respond(screen540){
+            width: 72%;
+        }
+
+        @include respond(screen600){
+            width: 74%;
+        }
+
+        @include respond(screen640){
+            width: 78%;
+        }
+
+        @include respond(screen800){
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        @include respond(screen1080){
+            font-size: 1.8rem;
+        }
+
+        @include respond(screen1280){
+            font-size: 2rem;
+        }
+
+    }
+
+}
